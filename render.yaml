@@ -1,0 +1,16 @@
+
+services:
+  - type: web
+    name: smart-transport-bot
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port 10000
+    envVars:
+      - key: TELEGRAM_TOKEN
+        value: your_telegram_token
+      - key: WEATHER_API_KEY
+        value: your_weather_api_key
+      - key: WEBHOOK_URL
+        value: https://your_render_url/webhook
+    autoDeploy: true

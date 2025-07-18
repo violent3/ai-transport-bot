@@ -1,0 +1,11 @@
+
+[build]
+builder = "Dockerfile"
+
+[deploy]
+startCommand = "uvicorn main:app --host 0.0.0.0 --port $PORT"
+
+[env]
+TELEGRAM_TOKEN = "your_telegram_token"
+WEATHER_API_KEY = "your_weather_api_key"
+WEBHOOK_URL = "https://your_railway_app.up.railway.app/webhook"
